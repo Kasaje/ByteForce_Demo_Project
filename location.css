@@ -1,0 +1,38 @@
+.slide-images{
+    transform: translateX(60%);
+    width: 45vw;
+    margin-bottom: 2vw;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 10px 25px 30px rgb(141, 141, 141);
+}
+.img-container{
+    width: 45vw;
+    height: 30vw;
+    display: flex;
+    animation: slide 15s infinite;
+}
+@keyframes slide {
+    0%{
+        transform: translateX(0);
+    }
+    17%{
+        transform: translateX(0);
+    }
+    33%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    67%{
+        transform: translateX(-100%);
+    }
+    84%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(-200%);
+    }
+}

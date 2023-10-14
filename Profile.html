@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Profile</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg p-2" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand"><img src="img/Logo_Website.png" alt="" height="35px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end mt-1 me-1" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active text-white mt-1" aria-current="page" href="#">Help</a>
+              <a class="nav-link active text-white " aria-current="page" href="#"><img class="mb-1" src="img/Global.png" alt="" height="30px"></a>
+              <div class="dropdown mt-1 ms-1">
+                <a class=" dropdown mt-1 " role="button"  data-bs-toggle="dropdown" >
+                  <img src="img/menu-dropdown.png" alt="" height="40px" width="80px">
+                </a>
+                <ul class="dropdown-menu bg-secondary-subtle dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                  <li ><a class="dropdown-item"  href="#">Main</a></li>
+                  <li ><a class="dropdown-item"  href="Profile.html">Profile</a></li>
+                  <li ><a class="dropdown-item"  href="#">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="img-fluid">
+        <img src="Profile_picture/bg-profile.png" width="100%" alt="">
+      </div>
+      <div class="text-center img-fluid " style="margin-top: -6rem;" id="profile_pic"><img id="profile_pic" src="Profile_picture/default_profile_pic.png" style="border: 5px solid white;
+        border-radius: 50%;
+        background-color: rgb(202, 202, 202);
+        position: relative;" alt="" width="200px" height="200px"></div>
+      <div class="text-center fs-2 mt-2" id="profile_name" >this is test profile name</div>
+
+      <div id="profile_description" class="mt-5 w-75 m-auto text-start">
+        <p class="fs-3 mb-5">ข้อมูลส่วนบุคคล</p>
+        <div>
+          <p class="fs-4 ">Name</p>
+          <div class="d-flex flex-row mt-4">
+            <p id="name" class="fs-4"></p>
+          </div>
+          <hr>
+        </div>
+
+        <div>
+          <p class="fs-4 ">Email</p>
+          <div class="d-flex flex-row mt-4">
+            <p id="email" class="fs-4"></p>
+          </div>
+          <hr>
+        </div>
+
+        <br><br>
+      <div class="d-flex flex-row justify-content-center ">
+        <a href="edit.html" class="btn btn-warning text-white me-auto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <a href="Delete.html" class="btn btn-danger ms-2">Delete Account</a>
+      </div>
+      <br><br>
+
+      <div class="d-flex flex-row">
+        <p class="fs-6">นโยบายคุกกี้</p>
+        <p class="fs-6 ps-4">ความเป็นส่วนตัว</p>
+      </div>
+      <hr>
+      <p class="fs-6">&copy; 2022</p>
+
+      <script src="profile.js"></script>
+</body>
+</html>
