@@ -2,7 +2,8 @@ const profile_name = document.getElementById('profile_name');
 const profile_pic = document.getElementById('profile_pic');
 const name = document.getElementById('name');
 const email = document.getElementById('email');
-const url = 'http://localhost:8000/profile/1';
+const global_user_id = sessionStorage.getItem('global_user_id')
+const url = `http://localhost:8000/profile/${global_user_id}`;
 
 async function getdata(){
     const response = await fetch(url);

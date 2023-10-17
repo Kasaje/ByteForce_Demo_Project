@@ -34,6 +34,11 @@ app.get('/',(req,res) => {
     return res.send("");
 });
 
+app.get('/users' , (req,res) => {
+    dbconfig.query("SELECT username , password , user_id FROM user" , [] ,(error , results) =>{
+        return res.json(results);
+    })
+})
 
 app.get('/location_review/:location_id' , (req,res) => {
     const location_id = req.params.location_id;
@@ -71,7 +76,6 @@ app.post('/edit/user/:user_id' , upload.single('image') , (req,res) => {
     const email = req.body.email;
     const image = req.file;
     dbconfig.query("UPDATE user SET firstname = ? , lastname = ? , email = ? , U_Picture = ?  WHERE user_id = ? " , [firstname,lastname,email, image.path, user_id] , (error,results) => {
-        return res.redirect('http://http://127.0.0.1:5500/Profile.html')
     })
 });
 
@@ -80,9 +84,9 @@ app.post('/delete/user/:user_id' , (req,res) => {
     dbconfig.query("DELETE FROM user WHERE user_id = ? " , [user_id] , (error,results) => {
         return res.redirect('http://127.0.0.1:5500/location.html')
     })
-});
+});  
 
-app.post('/register', (req,res) => {
+app.post('/register', (req,res) => { 
     const username = req.body.username;
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
@@ -98,11 +102,11 @@ app.post('/comment/:location_id/:user_id' , (req,res) => {
     const location_id = req.params.location_id;
     const user_id = req.params.user_id;
     const message = req.body.message;
-    console.log(req)
     dbconfig.query("INSERT INTO review(user_id , location_id , review_message) VALUES(? , ? , ? )" , [user_id , location_id , message ] , (error,results) =>{
-        return res.redirect('http://http://127.0.0.1:5500/Profile.html');
+        return res.redirect('http://127.0.0.1:5500/location.html');
     })
 });
+
 
 app.listen(port , () => {
     console.log(`Server running on port ${port}`)
