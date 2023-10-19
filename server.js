@@ -69,6 +69,15 @@ app.get('/location_like/:profile_id' , (req,res) => {
     });
 });
 
+app.post('/delete_location_like/:location_id/:user_id', (req,res) => {
+    const location_id = req.params.location_id;
+    const user_id = req.params.user_id;
+    const datetime_like = req.params.datetime_like;
+    dbconfig.query("DELETE FROM location_like WHERE user_id = ? AND location_id = ?", [user_id , location_id ] , (error,results) => {
+        return res.redirect('http://127.0.0.1:5500/location_like.html');
+    });
+})
+
 app.post('/edit/user/:user_id' , upload.single('image') , (req,res) => {
     const user_id = req.params.user_id;
     const firstname = req.body.firstname;
@@ -82,19 +91,27 @@ app.post('/edit/user/:user_id' , upload.single('image') , (req,res) => {
 app.post('/delete/user/:user_id' , (req,res) => {
     const user_id = req.params.user_id;
     dbconfig.query("DELETE FROM user WHERE user_id = ? " , [user_id] , (error,results) => {
-        return res.redirect('http://127.0.0.1:5500/location.html')
+        return res.redirect('http://127.0.0.1:5500/Main.html')
     })
 });  
 
-app.post('/register', (req,res) => { 
+app.post('/add_location_like/:user_id/:location_id', (req,res) => {
+    const user_id = req.params.user_id;
+    const location_id = req.params.location_id;
+    dbconfig.query("INSERT INTO location_like(user_id , location_id) VALUES(? , ? )", [user_id , location_id] , (error,results) => {
+        return res.redirect(`http://127.0.0.1:5500/location.html?id=${location_id}`);
+    })
+})
+
+app.post('/Register' ,(req,res) =>{
     const username = req.body.username;
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
     const email = req.body.email;
     const password = req.body.password;
-    dbconfig.query("INSERT INTO user(username , firstname , lastname , email , password ) VALUES(? , ? , ? , ? , ? )", [username , firstname , lastname , email , password] , (error , results) => {
+    dbconfig.query("INSERT INTO user(username , firstname , lastname , email , password) VALUES(? , ? , ? , ? , ?)" ,[username , firstname , lastname ,email , password] , (error , results) =>{
         return res.redirect("http://127.0.0.1:5500/Login.html")
-    })
+ }) 
 });
 
 
@@ -103,9 +120,11 @@ app.post('/comment/:location_id/:user_id' , (req,res) => {
     const user_id = req.params.user_id;
     const message = req.body.message;
     dbconfig.query("INSERT INTO review(user_id , location_id , review_message) VALUES(? , ? , ? )" , [user_id , location_id , message ] , (error,results) =>{
-        return res.redirect('http://127.0.0.1:5500/location.html');
+        return res.redirect(`http://127.0.0.1:5500/location.html?id=${location_id}`)
     })
 });
+
+
 
 
 app.listen(port , () => {

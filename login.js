@@ -7,9 +7,10 @@ async function getuser(){
     const response = await fetch(url_login);
     const data = await response.json();
     data.forEach(data => {
+        console.log(data.username , data.password)
         if (login_username == data.username && login_password == data.password){      
             sessionStorage.setItem("global_user_id" , data.user_id);    
-            location.replace("Profile.html"); 
+            location.replace("Home.html"); 
         }
         else{
             alert_message.innerHTML = "<div class='alert alert-danger' role='alert'>Username or Password is not match , Please try again.</div>"

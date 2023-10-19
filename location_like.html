@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Profile.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Like</title>
 </head>
-<body>
+<body >
     <nav class="navbar navbar-expand-lg p-2" id="navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="Home.html"><img src="img/Logo_Website.png" alt="" height="35px"></a>
@@ -34,50 +34,14 @@
         </div>
       </nav>
 
-      <div class="img-fluid">
-        <img src="Profile_picture/bg-profile.png" width="100%" alt="">
-      </div>
-      <div class="text-center img-fluid " style="margin-top: -6rem;" id="profile_pic"><img id="profile_pic" src="Profile_picture/default_profile_pic.png" style="border: 5px solid white;
-        border-radius: 50%;
-        background-color: rgb(202, 202, 202);
-        position: relative;" alt="" width="200px" height="200px"></div>
-      <div class="text-center fs-2 mt-2" id="profile_name" >this is test profile name</div>
 
-      <div id="profile_description" class="mt-5 w-75 m-auto text-start">
-        <p class="fs-3 mb-5">ข้อมูลส่วนบุคคล</p>
-        <div>
-          <p class="fs-4 ">Name</p>
-          <div class="d-flex flex-row mt-4">
-            <p id="name" class="fs-4"></p>
-          </div>
-          <hr>
+
+      <p class="container fs-2 mt-3 text-success"><img src="./img_location_like/star_location_like.svg" style="margin-top: -0.7vh;" alt="">Favorite Place</p>
+      <div class="container" style="border-top: 2px solid rgb(180, 180, 180) ;"></div>
+
+
+        <div class="container" id="show_location_like">
         </div>
-
-        <div>
-          <p class="fs-4 ">Email</p>
-          <div class="d-flex flex-row mt-4">
-            <p id="email" class="fs-4"></p>
-          </div>
-          <hr>
-        </div>
-
-        <br><br>
-      <div class="d-flex flex-row justify-content-between ">
-        <a href="edit.html" class="btn btn-warning text-white ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        <a href="location_like.html" class="btn btn-success ms-2 ">Favorite Place</a>
-        <a href="Delete.html" class="btn btn-danger ms-2">Delete Account</a>
-      </div>
-      <br><br>
-
-      <div class="d-flex flex-row">
-        <p class="fs-6">นโยบายคุกกี้</p>
-        <p class="fs-6 ps-4">ความเป็นส่วนตัว</p>
-      </div>
-      <hr>
-      <p class="fs-6">&copy; 2022</p>
-
-
-      <script src="profile.js"></script>
-      <script src="login.js"></script>
+      <script src="location_like.js"></script>
 </body>
 </html>
