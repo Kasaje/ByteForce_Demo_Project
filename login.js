@@ -4,6 +4,7 @@ const url_login = 'http://localhost:8000/users';
 async function getuser(){
     const login_username = await document.getElementById("login_username").value;
     const login_password = await document.getElementById("login_password").value;
+    console.log(login_password)
     const response = await fetch(url_login);
     const data = await response.json();
     data.forEach(data => {

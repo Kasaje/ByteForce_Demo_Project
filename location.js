@@ -29,7 +29,7 @@ const btn_fav = document.getElementById('btn-fav');
 async function fav(){
   const response = await fetch(url_fav);
   const data = await response.json()
-    if (data.length != 0){
+    if (data.length != 0 ){
       btn_fav.innerHTML = `<button class='btn btn-success' disabled>Added to favorites</button>`
     }
     else{
